@@ -1,0 +1,138 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: minmax(max-content, 20rem) 1fr;
+    grid-template-rows: min-content;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.container{
+  display: grid;
+  color: #33314a;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  row-gap: 1rem;
+}
+
+.search{
+    display: contents;
+    
+    &__input{
+        border: 1px solid whitesmoke;
+        padding: .5rem 1rem;
+        outline: none;
+    }
+}
+
+.filters{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    .filter{
+        background-color: whitesmoke;
+        padding: 1rem;
+
+        &__title{
+            margin: 0;
+            padding: 0 0 1rem;
+            border-bottom: 1px solid #33314a;
+        }
+
+        &__item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: .5rem 1rem 0;
+
+            &-key{
+            }
+
+            &-value{
+                font-family: LatoLight;
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+.item{
+    background-color: whitesmoke;
+    padding: 1rem;
+    box-shadow: 0px 1px 1px #33314a54;
+
+    &__title{
+        margin: 0 0 1rem;
+    }
+
+    &__body{
+        background-color: white;
+        padding: 1rem;
+
+        &-title{
+            margin: 1.5rem 0 .5rem 0;
+        }
+
+        &-row{
+            display: flex;
+            align-items: center;
+        }
+
+        &-col{
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.text{
+    font-family: LatoLight;
+    margin: 0;
+}
+
+.genre{
+    padding: .4rem .7rem;
+    background-color: #33314a;
+    color: whitesmoke;
+    font-size: .8rem;
+}
+
+.selected{
+    display: grid;
+    grid-auto-columns: min-content;
+    grid-auto-flow: column;
+    gap: .5rem;
+
+    &__filter{
+        background-color: whitesmoke;
+        padding: .4rem .7rem;
+        margin: 0;
+    }
+}
+
+svg{
+    fill: gray;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.2rem;
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url(./assets/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(./assets/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url(./assets/fonts/Lato-Bold.ttf);
+}
+
+body{
+    font-family: Lato;
+    box-sizing: content-box;
+}
