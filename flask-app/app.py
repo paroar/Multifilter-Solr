@@ -33,7 +33,7 @@ def index():
         # regular facets
         ('facet.field', 'Platform'), 
         ('facet.field', 'Publisher'),
-        ('facet.field', 'Genre'),
+        ('facet.field', '{!ex=Genre}Genre'),
         # format response as JSON
         ('wt', 'json'),
         # format facets
