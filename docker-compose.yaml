@@ -7,17 +7,17 @@ services:
       context: ./flask-app
       dockerfile: Dockerfile
     ports:
-      - 5000:5000
+      - 5001:5000
     networks:
       - solr
     depends_on:
       - solr
 
-  solr:
+  solr-filter:
     image: solr:8.5
-    container_name: solr
+    container_name: solr-filter
     ports:
-      - "8983:8983"
+      - 8984:8983
     networks:
       - solr
     entrypoint:

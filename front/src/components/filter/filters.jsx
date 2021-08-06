@@ -1,21 +1,24 @@
 import React from 'react'
 import Filter from './filter'
 
-const Filters = ({facets, isLoading}) => {
+const Filters = React.memo(({ facets, isLoading }) => {
 
-    if(facets){
+    if (facets) {
         return (
             <div className="filters">
-                {Object.entries(facets.facet_fields).map(f => (
-                    <Filter facet={f} key={f[0]}/>
-                    ))}
+                {Object.entries(facets).map(f => (
+                    <Filter facet={f} key={f[0]} isLoading={isLoading} />
+                ))}
             </div>
         )
     }
 
     return (
-        <p>Filter Loading</p>
+        <div>
+            Loading
+        </div>
     )
-}
+
+})
 
 export default Filters
