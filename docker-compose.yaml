@@ -11,7 +11,7 @@ services:
     networks:
       - solr
     depends_on:
-      - solr
+      - solr-filter
 
   solr-filter:
     image: solr:8.5
