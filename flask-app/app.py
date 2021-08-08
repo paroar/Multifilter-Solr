@@ -47,13 +47,17 @@ def index():
 
     for filter in filters:
         category = filter["category"]
+        values = filter["values"]
+        parsedValues = map(lambda x : f"\"{x}\"", values)
+
         tag = "{!tag="+category+"}"+category+":" + \
-            "("+" OR ".join(filter["values"])+")"
+            "("+" OR ".join(parsedValues)+")"
         solr_tuples.append(('fq', tag))
+
 
     encoded_solr_tuples = urllib.parse.urlencode(solr_tuples)
     complete_url = SOLR_URL + encoded_solr_tuples
-    print(complete_url, file=sys.stderr)
+
     connection = urlopen(complete_url)
     response = simplejson.load(connection)
 

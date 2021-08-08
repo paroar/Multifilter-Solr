@@ -99,7 +99,7 @@
 
 .selected{
     display: grid;
-    grid-auto-columns: min-content;
+    grid-auto-columns: max-content;
     grid-auto-flow: column;
     gap: .5rem;
 

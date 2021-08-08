@@ -20,10 +20,12 @@ services:
       - 8984:8983
     networks:
       - solr
+    volumes: 
+      - ./config:/var/solr/data/core-config
     entrypoint:
-      - bash
-      - "-c"
-      - "precreate-core vgsales; exec solr -f"
+      - solr-precreate
+      - vgsales
+      - /var/solr/data/core-config
 
 networks:
   solr:

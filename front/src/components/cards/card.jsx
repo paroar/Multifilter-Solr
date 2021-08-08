@@ -44,11 +44,9 @@ const Card = ({item}) => {
           </div>
           <h4 className="item__body-title">Genres</h4>
           <div className="item__body-row">
-              {item.Genre.map(g => (
-                <span className="genre" key={g}>
-                  {g}
-                </span>
-              ))}
+              <span className="genre">
+                {item.Genre}
+              </span>
           </div>
         </div>
       </div>
